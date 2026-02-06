@@ -620,7 +620,9 @@
             <section>
                 <input type="checkbox" name="autorefresh" id="autorefresh" onchange="changeAutoRefresh(this);"> <label for='autorefresh'>Automatically refresh current screen</label>
                 <br>
+                <br>
                 <input type="number" name="itemsperrow" id="itemsperrow" min=1 max=8 value=5 onchange="changeItemsPerRow(this);"> <label for='itemsperrow'>Items per row</label>
+                <br>
                 <br>
                 <select name="numberformat" id="numberformat" onchange="changeNumberFormat(this);">
                     <option value=0>Local</option>
@@ -631,11 +633,9 @@
                 </select>
                 <label for="numberformat"> Number format</label>
                 <br>
+                <br>
                 <input type="checkbox" name="showitemid" id="showitemid" onchange="changeShowItemID(this);"> <label for="showitemid">Show item id</label>
                 <br>
-                <input type="checkbox" name="showitemicon" id="showitemicon" onchange="changeShowItemIcon(this);" disabled title="Work in progress"> <label for="showitemicon" title="Work in progress">Show item icons [work in progress]</label>
-                <br>
-                <button onclick="if(confirm('Are you sure you want to purge icons cache? This will result all icons to be redownloaded!')){ localStorage.clear(); location.reload(); }">Purge icon cache</button>
                 <br>
                 You are logged in as <span id="username" style="font-weight: bold;"></span> <br>
                 <button onclick="document.location.href='?logout'">LogOut</button>
@@ -680,8 +680,8 @@
     ];
     const sortByDisplay = ['A-Z', '# of items', 'Mod'];
     const sortOrderDisplay = ['Ascending', 'Descending'];
-    const storedCraftableDisplay = ['Stored', 'Craftable', 'Stored and craftable'];
-    const itemsTypeDisplay = ['Items', 'Fluid drops', 'Items and fluid drops'];
+    const storedCraftableDisplay = ['Stored', 'Craftable', 'Stored and Craftable'];
+    const itemsTypeDisplay = ['Items', 'Fluid', 'Items and Fluid'];
 
     const BYTE_UNIT = [ "B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB", "BB" ];
     const BYTE_LIMIT = [ 1.0, 1024.0, 1048576.0, 1.073741824E9, 1.099511627776E12, 1.125899906842624E15, 1.15292150460684698E18, 1.1805916207174113E21, 1.2089258196146292E24, 1.2379400392853803E27 ];
@@ -1243,7 +1243,7 @@
     function getItemList(){
         if (selectedGrid == -1)
             return;
-        let message = "Asking for item list...";
+        let message = "Loading network...";
         pushLoadingScreen(message);
         $.getJSON('items?grid=' + selectedGrid, function(data){
             console.log(data);
