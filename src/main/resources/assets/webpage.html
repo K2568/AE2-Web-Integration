@@ -536,7 +536,6 @@
 
     </section>
 </section>
-<h1>UNIVERSAL WEB TERMINAL</h1>
 <section id="overlay">
     <section id="overlaytext">
         LOADING...
@@ -548,7 +547,7 @@
     </section> -->
 </section>
 <section id="terminalgrid">
-    <button class='collapsible' id='currentgrid'>No grid selected</button>
+    <button class='collapsible' id='currentgrid'>No network selected</button>
     <section style='display: none;'>
         <section style='display: flex; flex-direction: row; flex-wrap: wrap;'>
             <select id="gridselection" size="5" style="margin-right: 10px; overflow-y: auto;" onchange="selectedGridChanged(this);">
@@ -558,10 +557,10 @@
                 <option value="4">Grid 4 owned</option> -->
             </select>
             <section>
-                <input type="checkbox" id="thisgridbydefault" disabled onchange="onThisGridByDefaultChange(this);">  <label for="thisgridbydefault">Select this grid by default</label> <br>
-                <input type="checkbox" id="trackthisgrid" disabled onchange="onTrackThisGridChange(this);"> <label for="trackthisgrid">Enable tracking for this grid (track jobs)</label> <br>
+                <input type="checkbox" id="thisgridbydefault" disabled onchange="onThisGridByDefaultChange(this);">  <label for="thisgridbydefault">Select this network by default</label> <br>
+                <input type="checkbox" id="trackthisgrid" disabled onchange="onTrackThisGridChange(this);"> <label for="trackthisgrid">Enable tracking for this network (track jobs)</label> <br>
             </section>
-            <span class='note' style="flex: 0 0 100%; margin-top: 10px;">To be able to select a grid, there must be a wireless access point available, and you have to be owner of it (you have to be the one who placed it).</span>
+            <span class='note' style="flex: 0 0 100%; margin-top: 10px; font-size: 14px;">List of which network is which in the discord server.</span>
         </section>
     </section>
 </section>
@@ -1106,7 +1105,7 @@
                     document.getElementById('thisgridbydefault').disabled = false;
                     document.getElementById('trackthisgrid').disabled = false;
                     document.getElementById('trackthisgrid').checked = grid['isTrackingEnabled'];
-                    document.getElementById('currentgrid').innerHTML = "Current grid: " + str;
+                    document.getElementById('currentgrid').innerHTML = "Current network: " + str;
                     gridFound = true;
                 }
             }
@@ -1812,8 +1811,5 @@
 
 </script>
 <br><br>
-<footer>
-    This service is hosted using <a href="https://github.com/kuba6000/AE2-Web-Integration">AE2 Web Integration</a> Made by <a href="https://github.com/kuba6000">@kuba6000</a>
-</footer>
 </body>
 </html>
