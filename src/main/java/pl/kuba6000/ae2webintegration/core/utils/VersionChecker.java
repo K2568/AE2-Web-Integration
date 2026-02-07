@@ -58,9 +58,7 @@ public class VersionChecker {
     }
 
     public static boolean isOutdated() {
-        updateLatestVersion();
-        if (latestTag == null) return false;
-        return !latestTag.equals(Tags.VERSION);
+        return false;
     }
 
     public static String getLatestTag() {
