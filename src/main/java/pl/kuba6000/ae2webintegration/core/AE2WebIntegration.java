@@ -78,7 +78,7 @@ public class AE2WebIntegration {
         if (!Config.INSTANCE.AE_PUBLIC_MODE.get() && !Config.INSTANCE.DISCORD_WEBHOOK.get()
             .isEmpty()) {
             DiscordManager.postMessageNonBlocking(
-                new DiscordManager.DiscordEmbed("AE2 Web Integration", "Discord integration started!"));
+                new DiscordManager.DiscordEmbed("AE2 Discord Bot", "Server started!"));
         } else if (Config.INSTANCE.AE_PUBLIC_MODE.get() && !Config.INSTANCE.DISCORD_WEBHOOK.get()
             .isEmpty()) {
                 DiscordManager.postMessageNonBlocking(
